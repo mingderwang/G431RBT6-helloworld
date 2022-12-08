@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stm32g4xx_nucleo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -80,7 +80,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  BSP_LED_Init(LED2);
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -97,6 +97,7 @@ int main(void)
   /* Output a message on Hyperterminal using printf function */
   printf("\n\r UART Printf Example: retarget the C library printf function to the UART\n\r");
   printf("** Test finished successfully. ** \n\r");
+  BSP_LED_On(LED2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
