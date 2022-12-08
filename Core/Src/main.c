@@ -21,6 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
 #include "stm32g4xx_nucleo.h"
 /* USER CODE END Includes */
 
@@ -87,8 +88,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  /* Initialize BSP Led for LED2 */
-  BSP_LED_Init(LED2);
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -264,9 +264,6 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
-    /* Toggle LED2 for error */
-    BSP_LED_Toggle(LED2);
-    HAL_Delay(500);
   }
   /* USER CODE END Error_Handler_Debug */
 }
